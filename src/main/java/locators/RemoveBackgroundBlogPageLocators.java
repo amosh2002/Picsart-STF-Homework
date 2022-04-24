@@ -2,7 +2,10 @@ package locators;
 
 public enum RemoveBackgroundBlogPageLocators {
 
-    REMOVE_BACKGROUND_TITLE("[class='post-single-postTitle-0-2-221']");
+    PICSART_LOGO("[class*='logoLink']"),
+    START_EDITING_BUTTON("[href='/editing-tools']"),
+    NEXT_POST_BUTTON("[class*='nextContent']"),
+    ABOUT_TEXT("[class*='about-section-aboutText']");
 
     private final String locator;
 

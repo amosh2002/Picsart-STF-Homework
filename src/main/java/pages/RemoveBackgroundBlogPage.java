@@ -6,7 +6,10 @@ import static locators.RemoveBackgroundBlogPageLocators.*;
 
 public class RemoveBackgroundBlogPage extends BasePage {
 
-    private final By removeBackgroundTitle = By.cssSelector(REMOVE_BACKGROUND_TITLE.getLocator());
+    private final By aboutText = By.cssSelector(ABOUT_TEXT.getLocator());
+    private final By startEditingButton = By.cssSelector(START_EDITING_BUTTON.getLocator());
+    private final By picsartLogo = By.cssSelector(PICSART_LOGO.getLocator());
+    private final By nextPostButton = By.cssSelector(NEXT_POST_BUTTON.getLocator());
 
     @Override
     public String getUrl() {
@@ -15,6 +18,23 @@ public class RemoveBackgroundBlogPage extends BasePage {
 
     @Override
     public void isLoaded() {
-        isElementDisplayed(removeBackgroundTitle);
+        isElementDisplayed(startEditingButton);
+    }
+
+    public String getRemoveBackgroundTitle() {
+        return getText(aboutText);
+    }
+
+    public HomePage clickPicsartLogo() {
+        click(picsartLogo);
+        return new HomePage();
+    }
+
+    public void scrollToNextPostButton() {
+        scrollToElement(nextPostButton);
+    }
+
+    public boolean isNextPostButtonPresent() {
+        return isElementDisplayed(nextPostButton);
     }
 }

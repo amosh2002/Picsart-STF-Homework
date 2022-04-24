@@ -13,7 +13,6 @@ import org.testng.annotations.Parameters;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static setup.DriverUtils.driver;

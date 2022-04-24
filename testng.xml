@@ -12,13 +12,34 @@
             </classes>
         </parameter>
     </test>
-
     <test name="test-2">
         <parameter name="browser" value="chrome">
             <classes>
                 <class name="RandomTests">
                     <methods>
                         <include name="blogPageAndRemoveBackgroundNavigateTest"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="test-3">
+        <parameter name="browser" value="chrome">
+            <classes>
+                <class name="RandomTests">
+                    <methods>
+                        <include name="removeBackgroundAndHomeNavigateTest"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="test-4">
+        <parameter name="browser" value="chrome">
+            <classes>
+                <class name="RandomTests">
+                    <methods>
+                        <include name="allPagesNavigateTest"/>
                     </methods>
                 </class>
             </classes>
