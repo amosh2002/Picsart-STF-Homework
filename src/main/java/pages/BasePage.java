@@ -1,21 +1,18 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import setup.WaitHelper;
 
-import static setup.DriverUtils.getDriver;
+import static setup.DriverUtils.driver;
 
 
 public abstract class BasePage {
-    protected WebDriver driver;
     protected Actions actions;
     public static final String BASE_URL = "https://picsartstage2.com";
 
     public BasePage() {
-        this.driver = getDriver();
         actions = new Actions(driver);
     }
 

@@ -27,7 +27,7 @@ public class RandomTests extends TestBase {
         blogPage.scrollToMostPopularCarousel();
         blogPage.clickMostPopularCarouselNextButton();
         removeBackgroundBlogPage = blogPage.clickChangeBackgroundButton();
-        Assert.assertEquals(removeBackgroundBlogPage.getCurrentUlr(), "removeBackgroundBlogPage.getUrl()", PAGE_NOT_OPENED.getMessage());
+        Assert.assertEquals(removeBackgroundBlogPage.getCurrentUlr(), removeBackgroundBlogPage.getUrl(), PAGE_NOT_OPENED.getMessage());
     }
 
 }
