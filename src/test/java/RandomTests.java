@@ -15,7 +15,7 @@ public class RandomTests extends TestBase {
 
         Assert.assertTrue(homePage.getPressAndReviewsHeading().contains("Press and Reviews"));
         homePage.clickBlogButton();
-        Assert.assertEquals(blogPage.getCurrentUlr(), blogPage.getUrl(), PAGE_NOT_OPENED.getMessage());
+        Assert.assertEquals(blogPage.getCurrentUrl(), blogPage.getUrl(), PAGE_NOT_OPENED.getMessage());
     }
 
     @Test
@@ -27,7 +27,7 @@ public class RandomTests extends TestBase {
         blogPage.scrollToMostPopularCarousel();
         blogPage.clickMostPopularCarouselNextButton();
         removeBackgroundBlogPage = blogPage.clickChangeBackgroundButton();
-        Assert.assertEquals(removeBackgroundBlogPage.getCurrentUlr(), removeBackgroundBlogPage.getUrl(), PAGE_NOT_OPENED.getMessage());
+        Assert.assertEquals(removeBackgroundBlogPage.getCurrentUrl(), removeBackgroundBlogPage.getUrl(), PAGE_NOT_OPENED.getMessage());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class RandomTests extends TestBase {
         removeBackgroundBlogPage.open();
         Assert.assertEquals(removeBackgroundBlogPage.getRemoveBackgroundTitle(), "Welcome to Picsart, the world’s largest creative platform and community! Every month, more than 150 million people use Picsart to express unique, fun, inspiring moments through the power of visual storytelling.");
         homePage = removeBackgroundBlogPage.clickPicsartLogo();
-        Assert.assertEquals(homePage.getCurrentUlr(), homePage.getUrl() + "/", PAGE_NOT_OPENED.getMessage());
+        Assert.assertEquals(homePage.getCurrentUrl(), homePage.getUrl() + "/", PAGE_NOT_OPENED.getMessage());
     }
 
     @Test

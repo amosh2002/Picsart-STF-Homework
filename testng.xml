@@ -1,47 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests">
-    <test name="test-1">
+    <test name="Pricing Page Tests">
         <parameter name="browser" value="chrome">
             <classes>
-                <class name="RandomTests">
-                    <methods>
-                        <include name="homePageAndBlogNavigateTest"/>
-                    </methods>
-                </class>
-            </classes>
-        </parameter>
-    </test>
-    <test name="test-2">
-        <parameter name="browser" value="chrome">
-            <classes>
-                <class name="RandomTests">
-                    <methods>
-                        <include name="blogPageAndRemoveBackgroundNavigateTest"/>
-                    </methods>
-                </class>
-            </classes>
-        </parameter>
-    </test>
-    <test name="test-3">
-        <parameter name="browser" value="chrome">
-            <classes>
-                <class name="RandomTests">
-                    <methods>
-                        <include name="removeBackgroundAndHomeNavigateTest"/>
-                    </methods>
-                </class>
-            </classes>
-        </parameter>
-    </test>
-    <test name="test-4">
-        <parameter name="browser" value="chrome">
-            <classes>
-                <class name="RandomTests">
-                    <methods>
-                        <include name="allPagesNavigateTest"/>
-                    </methods>
-                </class>
+                <class name="PricingPageTests"/>
+                <class name="ImageSearchTests"/>
             </classes>
         </parameter>
     </test>

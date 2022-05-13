@@ -15,8 +15,8 @@ public class BlogPage extends BasePage {
     }
 
     @Override
-    public void isLoaded() {
-        isElementDisplayed(mostPopularCarouselNextButton);
+    public boolean isLoaded() {
+        return isElementDisplayed(mostPopularCarouselNextButton);
     }
 
     public void scrollToMostPopularCarousel() {

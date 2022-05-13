@@ -1,4 +1,4 @@
-package pages;
+package components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,22 +8,14 @@ import setup.WaitHelper;
 import static setup.DriverUtils.driver;
 
 
-public abstract class BasePage {
+public abstract class BaseComponent {
     protected Actions actions;
-    public static final String BASE_URL = "https://picsartstage2.com";
 
-    public BasePage() {
+    public BaseComponent() {
         actions = new Actions(driver);
     }
 
-    public abstract String getUrl();
-
     public abstract boolean isLoaded();
-
-    public void open() {
-        driver.get(getUrl());
-        isLoaded();
-    }
 
     public boolean isElementDisplayed(By locator) {
         try {
@@ -57,5 +49,6 @@ public abstract class BasePage {
     public void navigateBack() {
         driver.navigate().back();
     }
+
 
 }

@@ -17,8 +17,8 @@ public class RemoveBackgroundBlogPage extends BasePage {
     }
 
     @Override
-    public void isLoaded() {
-        isElementDisplayed(startEditingButton);
+    public boolean isLoaded() {
+        return isElementDisplayed(startEditingButton);
     }
 
     public String getRemoveBackgroundTitle() {

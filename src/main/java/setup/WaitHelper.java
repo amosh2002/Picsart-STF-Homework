@@ -12,7 +12,7 @@ import static errors.ErrorMessages.ELEMENT_NOT_FOUND;
 import static setup.DriverUtils.driver;
 
 public class WaitHelper {
-    private static final Duration DURATION = Duration.ofSeconds(10);
+    private static final Duration DURATION = Duration.ofSeconds(20);
 
     private WaitHelper() {
     }

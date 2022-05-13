@@ -15,8 +15,8 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    public void isLoaded() {
-        isElementDisplayed(blogButton);
+    public boolean isLoaded() {
+        return isElementDisplayed(blogButton);
     }
 
 
