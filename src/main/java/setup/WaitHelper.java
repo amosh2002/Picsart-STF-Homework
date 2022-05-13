@@ -38,4 +38,12 @@ public class WaitHelper {
             throw new Error(location + " " + ELEMENT_NOT_FOUND.getMessage());
         }
     }
+
+    public void waitForSeconds(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (Exception e) {
+            throw new Error("Wait crashed");
+        }
+    }
 }

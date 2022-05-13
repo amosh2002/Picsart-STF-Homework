@@ -49,7 +49,7 @@ public class ImagesSearchPage extends BasePage {
 
         @Override
         public String getUrl() {
-            return ImagesSearchPage.this.getCurrentUrl() + "/stickers";
+            return ImagesSearchPage.this.getUrl() + "/stickers";
         }
 
         @Override
@@ -64,7 +64,7 @@ public class ImagesSearchPage extends BasePage {
 
         @Override
         public String getUrl() {
-            return ImagesSearchPage.this.getCurrentUrl() + "/images";
+            return ImagesSearchPage.this.getUrl() + "/images";
         }
 
         @Override
@@ -79,7 +79,7 @@ public class ImagesSearchPage extends BasePage {
 
         @Override
         public String getUrl() {
-            return ImagesSearchPage.this.getCurrentUrl() + "/tags";
+            return ImagesSearchPage.this.getUrl() + "/tags";
         }
 
         @Override
@@ -94,7 +94,7 @@ public class ImagesSearchPage extends BasePage {
 
         @Override
         public String getUrl() {
-            return ImagesSearchPage.this.getCurrentUrl() + "/artists";
+            return ImagesSearchPage.this.getUrl() + "/artists";
         }
 
         @Override
