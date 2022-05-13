@@ -3,7 +3,10 @@ import org.testng.asserts.SoftAssert;
 import pages.ImagesSearchPage;
 import setup.WaitHelper;
 
+import static org.testng.Assert.assertEquals;
+
 public class ImageSearchTests extends TestBase {
+
     @Test
     public void categoryButtonsTest() {
         SoftAssert softAssert = new SoftAssert();
@@ -37,4 +40,44 @@ public class ImageSearchTests extends TestBase {
 
         softAssert.assertAll();
     }
+
+    @Test
+    public void searchInputFieldTest() {
+        SoftAssert softAssert = new SoftAssert();
+        ImagesSearchPage imagesSearchPage = new ImagesSearchPage();
+
+        imagesSearchPage.open();
+
+        // Positive scenario
+        imagesSearchPage.clickSearchInputField();
+        softAssert.assertFalse(imagesSearchPage.isSearchSuggestionListPresent(), "Positive scenario: Search suggestions are displayed");
+
+        // Positive scenario
+        imagesSearchPage.typeInSearchInputField("love");
+        softAssert.assertTrue(imagesSearchPage.getSearchSuggestionItemText().contains("love"), "Positive scenario: Search suggestion is displayed wrong");
+        imagesSearchPage.clearSearchInputFieldContent();
+
+        // Negative scenario
+        imagesSearchPage.typeInSearchInputField("hac_panir_pomidor");
+        WaitHelper.getInstance().waitForSeconds(1000);
+        softAssert.assertFalse(imagesSearchPage.isSearchSuggestionListPresent(), "Negative scenario: Search suggestions are displayed");
+
+        softAssert.assertAll();
+
+    }
+
+    @Test
+    public void searchInputFieldSuggestionRedirectionTest() {
+        ImagesSearchPage imagesSearchPage = new ImagesSearchPage();
+
+        imagesSearchPage.open();
+
+        imagesSearchPage.typeInSearchInputField("love");
+        imagesSearchPage.clickFirstSearchSuggestionItem();
+        WaitHelper.getInstance().waitForSeconds(2000);
+        assertEquals(imagesSearchPage.getCurrentUrl(), "https://picsartstage2.com/hashtag/love", "Redirection works wrong");
+
+
+    }
+
 }

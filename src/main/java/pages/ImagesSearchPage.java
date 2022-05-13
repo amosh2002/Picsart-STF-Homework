@@ -12,6 +12,8 @@ public class ImagesSearchPage extends BasePage {
     private final By imagesCategoryButton = By.cssSelector(IMAGES_CATEGORY_BUTTON.getLocator());
     private final By hashtagsCategoryButton = By.cssSelector(HASHTAGS_CATEGORY_BUTTON.getLocator());
     private final By artistsCategoryButton = By.cssSelector(ARTISTS_CATEGORY_BUTTON.getLocator());
+    private final By searchInputField = By.cssSelector(SEARCH_INPUT_FIELD.getLocator());
+    private final By searchSuggestionItem = By.cssSelector(SEARCH_SUGGESTION_ITEM.getLocator());
 
     @Override
     public String getUrl() {
@@ -41,6 +43,30 @@ public class ImagesSearchPage extends BasePage {
     public ArtistsSubCategory clickArtistsCategoryButton() {
         click(artistsCategoryButton);
         return new ArtistsSubCategory();
+    }
+
+    public void clickSearchInputField() {
+        click(searchInputField);
+    }
+
+    public void clickFirstSearchSuggestionItem() {
+        click(searchSuggestionItem);
+    }
+
+    public void typeInSearchInputField(String text) {
+        typeIn(searchInputField, text);
+    }
+
+    public void clearSearchInputFieldContent() {
+        clearContent(searchInputField);
+    }
+
+    public String getSearchSuggestionItemText() {
+        return getText(searchSuggestionItem);
+    }
+
+    public boolean isSearchSuggestionListPresent() {
+        return isElementDisplayed(searchSuggestionItem);
     }
 
     public class StickersSubCategory extends BasePage {

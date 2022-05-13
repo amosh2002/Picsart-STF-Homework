@@ -6,7 +6,7 @@ import pages.PricingPage;
 
 public class PricingPageTests extends TestBase {
 
-    //@Test
+    @Test
     public void plansButtonsFunctionalityTest() {
         SoftAssert softAssert = new SoftAssert();
         PricingPage pricingPage = new PricingPage();
@@ -32,7 +32,7 @@ public class PricingPageTests extends TestBase {
     }
 
 
-    //@Test
+    @Test
     public void yearlyPackagePricesTest() {
         SoftAssert softAssert = new SoftAssert();
         PricingPage pricingPage = new PricingPage();
@@ -56,7 +56,7 @@ public class PricingPageTests extends TestBase {
     }
 
 
-    //@Test
+    @Test
     public void monthlyPackagePricesTest() {
         SoftAssert softAssert = new SoftAssert();
         PricingPage pricingPage = new PricingPage();

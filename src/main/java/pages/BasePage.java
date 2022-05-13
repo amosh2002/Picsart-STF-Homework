@@ -29,7 +29,7 @@ public abstract class BasePage {
         try {
             WaitHelper.getInstance().waitForElementToBeVisible(locator);
             return true;
-        } catch (Exception ignored) {
+        } catch (Error ignored) {
             return false;
         }
     }
@@ -43,6 +43,17 @@ public abstract class BasePage {
         WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
         return element.getText();
     }
+
+    public void typeIn(By locator, String text) {
+        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        element.sendKeys(text);
+    }
+
+    public void clearContent(By locator) {
+        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        element.clear();
+    }
+
 
     public void scrollToElement(By locator) {
         WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);

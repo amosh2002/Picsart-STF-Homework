@@ -5,6 +5,12 @@
         <parameter name="browser" value="chrome">
             <classes>
                 <class name="PricingPageTests"/>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Image Search Tests">
+        <parameter name="browser" value="chrome">
+            <classes>
                 <class name="ImageSearchTests"/>
             </classes>
         </parameter>

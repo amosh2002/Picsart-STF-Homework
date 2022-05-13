@@ -19,7 +19,7 @@ import static setup.DriverUtils.driver;
 
 public abstract class TestBase {
 
-    @BeforeClass
+    @BeforeMethod
     @Parameters("browser")
     public void startRemoteServer(String browser) {
         try {
@@ -27,16 +27,12 @@ public abstract class TestBase {
             desiredCapabilities.setBrowserName(browser);
             driver = new RemoteWebDriver(new URL("http://localhost:4444/"), desiredCapabilities);
             driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+            Cookie cookie = new Cookie("OptanonAlertBoxClosed", "2022-04-23T12:37:16.432Z");
+            driver.get("https://picsartstage2.com/");
+            driver.manage().addCookie(cookie);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @BeforeMethod
-    public void startDriver() {
-        Cookie cookie = new Cookie("OptanonAlertBoxClosed", "2022-04-23T12:37:16.432Z");
-        driver.get("https://picsartstage2.com/");
-        driver.manage().addCookie(cookie);
     }
 
     @AfterMethod
