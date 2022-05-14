@@ -26,9 +26,27 @@ public abstract class BaseComponent {
         }
     }
 
+    public boolean isElementClickable(By locator, int seconds) {
+        try {
+            WaitHelper.getInstance(seconds).waitForElementToBeClickable(locator);
+            return true;
+        } catch (Error ignored) {
+            return false;
+        }
+    }
+
     public boolean isElementDisplayed(By locator, int seconds) {
         try {
             WaitHelper.getInstance(seconds).waitForElementToBeVisible(locator);
+            return true;
+        } catch (Error ignored) {
+            return false;
+        }
+    }
+
+    public boolean isElementClickable(By locator) {
+        try {
+            WaitHelper.getInstance(5).waitForElementToBeClickable(locator);
             return true;
         } catch (Error ignored) {
             return false;
@@ -51,7 +69,7 @@ public abstract class BaseComponent {
     }
 
     public void clearContent(By locator) {
-        WebElement element = WaitHelper.getInstance(1).waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(1).waitForElementToBeClickable(locator);
         element.clear();
     }
 

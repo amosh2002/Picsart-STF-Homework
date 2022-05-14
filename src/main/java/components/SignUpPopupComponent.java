@@ -1,6 +1,7 @@
 package components;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static locators.SignUpPopupComponentLocators.*;
 
@@ -52,10 +53,17 @@ public class SignUpPopupComponent extends BaseComponent {
     }
 
     public void clearPasswordField() {
-        clearContent(passwordField);
+        int charNumber = getText(passwordField).length();
+        for (int i = 0; i < charNumber; i++) {
+            typeInPasswordField(Keys.BACK_SPACE.toString());
+        }
     }
 
     public void clickCreateAccountButton() {
         click(createAccountButton);
+    }
+
+    public boolean isCreateAccountButtonClickable() {
+        return isElementClickable(createAccountButton);
     }
 }
