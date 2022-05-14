@@ -1,7 +1,6 @@
 package components;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 import static locators.SignUpPopupComponentLocators.*;
 
@@ -50,17 +49,6 @@ public class SignUpPopupComponent extends BaseComponent {
 
     public boolean isPasswordRedAlertDisplayed() {
         return isElementDisplayed(passwordRedAlert, 1);
-    }
-
-    public void clearPasswordField() {
-        int charNumber = getText(passwordField).length();
-        for (int i = 0; i < charNumber; i++) {
-            typeInPasswordField(Keys.BACK_SPACE.toString());
-        }
-    }
-
-    public void clickCreateAccountButton() {
-        click(createAccountButton);
     }
 
     public boolean isCreateAccountButtonClickable() {
