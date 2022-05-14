@@ -27,7 +27,7 @@ public abstract class BasePage {
 
     public boolean isElementDisplayed(By locator) {
         try {
-            WaitHelper.getInstance().waitForElementToBeVisible(locator);
+            WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
             return true;
         } catch (Error ignored) {
             return false;
@@ -35,28 +35,28 @@ public abstract class BasePage {
     }
 
     public void click(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeClickable(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeClickable(locator);
         element.click();
     }
 
     public String getText(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
         return element.getText();
     }
 
     public void typeIn(By locator, String text) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
         element.sendKeys(text);
     }
 
     public void clearContent(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(1).waitForElementToBeVisible(locator);
         element.clear();
     }
 
 
     public void scrollToElement(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
         actions.moveToElement(element).perform();
     }
 

@@ -19,35 +19,40 @@ public abstract class BaseComponent {
 
     public boolean isElementDisplayed(By locator) {
         try {
-            WaitHelper.getInstance().waitForElementToBeVisible(locator);
+            WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
             return true;
-        } catch (Exception ignored) {
+        } catch (Error ignored) {
+            return false;
+        }
+    }
+
+    public boolean isElementDisplayed(By locator, int seconds) {
+        try {
+            WaitHelper.getInstance(seconds).waitForElementToBeVisible(locator);
+            return true;
+        } catch (Error ignored) {
             return false;
         }
     }
 
     public void click(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeClickable(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeClickable(locator);
         element.click();
     }
 
     public String getText(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
         return element.getText();
     }
 
-    public void scrollToElement(By locator) {
-        WebElement element = WaitHelper.getInstance().waitForElementToBeVisible(locator);
-        actions.moveToElement(element).perform();
+    public void typeIn(By locator, String text) {
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
+        element.sendKeys(text);
     }
 
-    public String getCurrentUrl() {
-        isLoaded();
-        return driver.getCurrentUrl();
-    }
-
-    public void navigateBack() {
-        driver.navigate().back();
+    public void clearContent(By locator) {
+        WebElement element = WaitHelper.getInstance(1).waitForElementToBeVisible(locator);
+        element.clear();
     }
 
 

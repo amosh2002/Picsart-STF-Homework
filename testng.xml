@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests">
-    <test name="Pricing Page Tests">
+<!--    <test name="Pricing Page Tests">-->
+<!--        <parameter name="browser" value="chrome">-->
+<!--            <classes>-->
+<!--                <class name="PricingPageTests"/>-->
+<!--            </classes>-->
+<!--        </parameter>-->
+<!--    </test>-->
+<!--    <test name="Image Search Tests">-->
+<!--        <parameter name="browser" value="chrome">-->
+<!--            <classes>-->
+<!--                <class name="ImageSearchTests"/>-->
+<!--            </classes>-->
+<!--        </parameter>-->
+<!--    </test>-->
+    <test name="Sign Up Tests">
         <parameter name="browser" value="chrome">
             <classes>
-                <class name="PricingPageTests"/>
-            </classes>
-        </parameter>
-    </test>
-    <test name="Image Search Tests">
-        <parameter name="browser" value="chrome">
-            <classes>
-                <class name="ImageSearchTests"/>
+                <class name="SignUpTests"/>
             </classes>
         </parameter>
     </test>

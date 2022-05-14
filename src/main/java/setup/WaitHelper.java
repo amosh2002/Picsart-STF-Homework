@@ -12,12 +12,13 @@ import static errors.ErrorMessages.ELEMENT_NOT_FOUND;
 import static setup.DriverUtils.driver;
 
 public class WaitHelper {
-    private static final Duration DURATION = Duration.ofSeconds(20);
+    private static Duration DURATION;
 
     private WaitHelper() {
     }
 
-    public static WaitHelper getInstance() {
+    public static WaitHelper getInstance(int seconds) {
+        DURATION = Duration.ofSeconds(seconds);
         return new WaitHelper();
     }
 
@@ -39,9 +40,9 @@ public class WaitHelper {
         }
     }
 
-    public void waitForSeconds(int ms) {
+    public void waitForSeconds() {
         try {
-            Thread.sleep(ms);
+            Thread.sleep(DURATION.getSeconds());
         } catch (Exception e) {
             throw new Error("Wait crashed");
         }
