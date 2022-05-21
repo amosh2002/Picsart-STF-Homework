@@ -36,6 +36,14 @@ public abstract class BasePage {
         }
     }
 
+    public int getNumberOfElements(By locator) {
+        try {
+            return WaitHelper.getInstance(5).waitForElementsToBeVisible(locator).size();
+        } catch (Error ignored) {
+            return 0;
+        }
+    }
+
     public void click(By locator) {
         WebElement element = WaitHelper.getInstance(5).waitForElementToBeClickable(locator);
         element.click();

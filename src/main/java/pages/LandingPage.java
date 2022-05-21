@@ -4,9 +4,9 @@ import locators.LandingPageLocators;
 import org.openqa.selenium.By;
 
 public class LandingPage extends BasePage {
-    private By buttons = By.cssSelector(LandingPageLocators.BUTTONS.getLocator());
-    private By titles = By.cssSelector(LandingPageLocators.TITLES.getLocator());
-    private By descriptions = By.cssSelector(LandingPageLocators.DESCRIPTIONS.getLocator());
+    protected By buttons = By.cssSelector(LandingPageLocators.BUTTONS.getLocator());
+    protected By titles = By.cssSelector(LandingPageLocators.TITLES.getLocator());
+    protected By descriptions = By.cssSelector(LandingPageLocators.DESCRIPTIONS.getLocator());
 
     private String toolName;
 

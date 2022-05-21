@@ -3,6 +3,8 @@ import org.testng.asserts.SoftAssert;
 import pages.ImagesSearchPage;
 import setup.WaitHelper;
 
+import static errors.ErrorMessages.BUTTON_DIDNT_WORK;
+import static errors.ErrorMessages.URL_IS_WRONG;
 import static org.testng.Assert.assertEquals;
 
 public class ImageSearchTests extends TestBase {
@@ -20,23 +22,23 @@ public class ImageSearchTests extends TestBase {
 
         stickersSubCategory = imagesSearchPage.clickStickersCategoryButton();
         WaitHelper.getInstance(1).waitForSeconds();
-        softAssert.assertTrue(stickersSubCategory.isLoaded(), "Stickers button doesn't work");
+        softAssert.assertTrue(stickersSubCategory.isLoaded(), "Stickers " + BUTTON_DIDNT_WORK.getMessage());
         softAssert.assertEquals(stickersSubCategory.getUrl(), stickersSubCategory.getCurrentUrl());
 
         WaitHelper.getInstance(1).waitForSeconds();
         imagesSubCategory = imagesSearchPage.clickImagesCategoryButton();
-        softAssert.assertTrue(imagesSubCategory.isLoaded(), "Images button doesn't work");
-        softAssert.assertEquals(imagesSubCategory.getUrl(), imagesSubCategory.getCurrentUrl(), "Images subcategory URL is wrong");
+        softAssert.assertTrue(imagesSubCategory.isLoaded(), "Images " + BUTTON_DIDNT_WORK.getMessage());
+        softAssert.assertEquals(imagesSubCategory.getUrl(), imagesSubCategory.getCurrentUrl(), "Images " + URL_IS_WRONG.getMessage());
 
         WaitHelper.getInstance(1).waitForSeconds();
         hashtagsSubCategory = imagesSearchPage.clickHashtagsCategoryButton();
-        softAssert.assertTrue(hashtagsSubCategory.isLoaded(), "Hashtags button doesn't work");
-        softAssert.assertEquals(hashtagsSubCategory.getUrl(), hashtagsSubCategory.getCurrentUrl(), "Hashtags subcategory URL is wrong");
+        softAssert.assertTrue(hashtagsSubCategory.isLoaded(), "Hashtags " + BUTTON_DIDNT_WORK.getMessage());
+        softAssert.assertEquals(hashtagsSubCategory.getUrl(), hashtagsSubCategory.getCurrentUrl(), "Hashtags " + URL_IS_WRONG.getMessage());
 
         WaitHelper.getInstance(1).waitForSeconds();
         artistsSubCategory = imagesSearchPage.clickArtistsCategoryButton();
-        softAssert.assertTrue(artistsSubCategory.isLoaded(), "Artists button doesn't work");
-        softAssert.assertEquals(artistsSubCategory.getUrl(), artistsSubCategory.getCurrentUrl(), "Artists subcategory URL is wrong");
+        softAssert.assertTrue(artistsSubCategory.isLoaded(), "Artists " + BUTTON_DIDNT_WORK.getMessage());
+        softAssert.assertEquals(artistsSubCategory.getUrl(), artistsSubCategory.getCurrentUrl(), "Artists " + URL_IS_WRONG.getMessage());
 
         softAssert.assertAll();
     }

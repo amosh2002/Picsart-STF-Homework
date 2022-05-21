@@ -4,7 +4,7 @@
     <test name="Image Search Tests">
         <parameter name="browser" value="chrome">
             <classes>
-                <class name="ImageSearchTests"/>
+                <class name="AppsLandingPageTests"/>
             </classes>
         </parameter>
     </test>
@@ -12,6 +12,13 @@
         <parameter name="browser" value="chrome">
             <classes>
                 <class name="LandingPagesTests"/>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Apps Landing Pages Tests">
+        <parameter name="browser" value="chrome">
+            <classes>
+                <class name="AppsLandingPageTests"/>
             </classes>
         </parameter>
     </test>

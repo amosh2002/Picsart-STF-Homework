@@ -6,6 +6,8 @@ import setup.WaitHelper;
 
 import java.util.List;
 
+import static errors.ErrorMessages.*;
+
 public class LandingPagesTests extends TestBase {
 
     ////////////////////////////////////////// Flyer Maker Page //////////////////////////////////////////
@@ -33,7 +35,7 @@ public class LandingPagesTests extends TestBase {
         for (int i = 0; i < 5; i++) {
             editorPage = flyerMakerPage.clickButton(i);
             WaitHelper.getInstance(2).waitForSeconds();
-            softAssert.assertTrue(editorPage.getDropDownText().contains("Flyer"), "Button didn't work " + i);
+            softAssert.assertTrue(editorPage.getDropDownText().contains("Flyer"), BUTTON_DIDNT_WORK.getMessage() + i);
             flyerMakerPage.open();
         }
 
@@ -47,7 +49,7 @@ public class LandingPagesTests extends TestBase {
 
         flyerMakerPage.open();
         for (int i = 0; i < 5; i++) {
-            softAssert.assertTrue(flyerMakerPage.getTitleText(i).contains(flyerTitles.get(i)), "Title text is incorrect " + i);
+            softAssert.assertTrue(flyerMakerPage.getTitleText(i).contains(flyerTitles.get(i)), TITLE_TEXT_INCORRECT.getMessage() + i);
         }
 
         softAssert.assertAll();
@@ -60,7 +62,7 @@ public class LandingPagesTests extends TestBase {
 
         flyerMakerPage.open();
         for (int i = 0; i < 5; i++) {
-            softAssert.assertTrue(flyerMakerPage.getDescriptionText(i).contains(flyerDescriptions.get(i)), "Description text is incorrect " + i);
+            softAssert.assertTrue(flyerMakerPage.getDescriptionText(i).contains(flyerDescriptions.get(i)), DESCRIPTION_TEXT_INCORRECT.getMessage() + i);
         }
 
         softAssert.assertAll();
@@ -92,7 +94,7 @@ public class LandingPagesTests extends TestBase {
         for (int i = 0; i < 5; i++) {
             editorPage = brochureMakerPage.clickButton(i);
             WaitHelper.getInstance(4).waitForSeconds();
-            softAssert.assertTrue(editorPage.getSearchFieldText().contains("brochure"), "Button didn't work " + i);
+            softAssert.assertTrue(editorPage.getSearchFieldText().contains("brochure"), BUTTON_DIDNT_WORK.getMessage() + i);
             brochureMakerPage.open();
         }
 
@@ -100,13 +102,13 @@ public class LandingPagesTests extends TestBase {
     }
 
     @Test
-    public void    brochureMakerTitlesTest() {
+    public void brochureMakerTitlesTest() {
         SoftAssert softAssert = new SoftAssert();
         LandingPage brochureMakerPage = new LandingPage("brochure-maker");
 
         brochureMakerPage.open();
         for (int i = 0; i < 5; i++) {
-            softAssert.assertTrue(brochureMakerPage.getTitleText(i).contains(brochureTitles.get(i)), "Title text is incorrect " + i);
+            softAssert.assertTrue(brochureMakerPage.getTitleText(i).contains(brochureTitles.get(i)), TITLE_TEXT_INCORRECT.getMessage() + i);
         }
 
         softAssert.assertAll();
@@ -119,7 +121,7 @@ public class LandingPagesTests extends TestBase {
 
         brochureMakerPage.open();
         for (int i = 0; i < 5; i++) {
-            softAssert.assertTrue(brochureMakerPage.getDescriptionText(i).contains(brochureDescriptions.get(i)), "Description text is incorrect " + i);
+            softAssert.assertTrue(brochureMakerPage.getDescriptionText(i).contains(brochureDescriptions.get(i)), DESCRIPTION_TEXT_INCORRECT.getMessage() + i);
         }
 
         softAssert.assertAll();
