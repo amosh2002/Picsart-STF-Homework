@@ -6,8 +6,6 @@ import static locators.ImagesSearchPageLocators.*;
 
 public class ImagesSearchPage extends BasePage {
 
-    private final By stickersCard = By.cssSelector(STICKERS_CARD.getLocator());
-    private final By allCategoryButton = By.cssSelector(ALL_CATEGORY_BUTTON.getLocator());
     private final By stickersCategoryButton = By.cssSelector(STICKERS_CATEGORY_BUTTON.getLocator());
     private final By imagesCategoryButton = By.cssSelector(IMAGES_CATEGORY_BUTTON.getLocator());
     private final By hashtagsCategoryButton = By.cssSelector(HASHTAGS_CATEGORY_BUTTON.getLocator());

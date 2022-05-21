@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import setup.WaitHelper;
 
+import java.util.List;
+
 import static setup.DriverUtils.driver;
 
 
@@ -39,9 +41,24 @@ public abstract class BasePage {
         element.click();
     }
 
+    public void click(By locator, int index) {
+        List<WebElement> element = WaitHelper.getInstance(5).waitForElementsToBeVisible(locator);
+        element.get(index).click();
+    }
+
     public String getText(By locator) {
         WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
         return element.getText();
+    }
+
+    public String getAttribute(By locator, String attributeName) {
+        WebElement element = WaitHelper.getInstance(5).waitForElementToBeVisible(locator);
+        return element.getAttribute(attributeName);
+    }
+
+    public String getText(By locator, int index) {
+        List<WebElement> element = WaitHelper.getInstance(5).waitForElementsToBeVisible(locator);
+        return element.get(index).getText();
     }
 
     public void typeIn(By locator, String text) {

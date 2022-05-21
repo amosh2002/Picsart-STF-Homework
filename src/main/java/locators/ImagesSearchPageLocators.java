@@ -1,8 +1,6 @@
 package locators;
 
 public enum ImagesSearchPageLocators {
-    STICKERS_CARD("[data-testid=\"sticker-card\"]"),
-    ALL_CATEGORY_BUTTON("[class*=\"search-tabs-tabsRow\"] a:nth-child(1)"),
     STICKERS_CATEGORY_BUTTON("[class*=\"search-tabs-tabsRow\"] a:nth-child(2)"),
     IMAGES_CATEGORY_BUTTON("[class*=\"search-tabs-tabsRow\"] a:nth-child(3)"),
     HASHTAGS_CATEGORY_BUTTON("[class*=\"search-tabs-tabsRow\"] a:nth-child(4)"),
